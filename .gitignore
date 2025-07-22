@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+.env
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Model weights and large files
+*.pt
+*.pth
+*.h5
+*.ckpt
+
+# Data files
+*.csv
+*.tsv
+*.xlsx
+*.json
+*.db
+
+# Images and uploads
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.gif
+static/uploads/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# PDFs and docs
+*.pdf
+docs/

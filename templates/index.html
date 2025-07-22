@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Slot Detection</title>
+</head>
+<body>
+    <h1>Parking Slot Detection</h1>
+    
+    <!-- Image Upload Form -->
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="file">Upload Parking Image:</label>
+        <input type="file" name="file" id="file" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    {% if filename %}
+        <h2>Processed Image:</h2>
+        <img src="{{ url_for('result_file', filename=filename) }}" alt="Processed Image" width="500">
+        
+        <h2>Heatmap:</h2>
+        <img src="{{ url_for('heatmap_file', filename=filename) }}" alt="Heatmap" width="500">
+
+        <h2>Cropped Parking Slots:</h2>
+        {% for path in cropped_slot_paths %}
+            <img src="{{ url_for('result_file', filename=path.split('/')[-1]) }}" alt="Cropped Slot" width="200">
+        {% endfor %}
+
+        <h2>Misparking Detection (IoU Results):</h2>
+        <ul>
+            {% for index in misparked_slots %}
+                <li>Slot {{ index }}: IoU = {{ iou_results[loop.index0] }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>

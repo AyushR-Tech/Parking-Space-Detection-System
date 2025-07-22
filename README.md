@@ -40,5 +40,3 @@ This project uses deep learning to detect available parking slots in images or v
 ## 🤝 Contributing
 Feel free to open issues or submit pull requests for improvements.
 
-## 📄 License
-This project is licensed under
